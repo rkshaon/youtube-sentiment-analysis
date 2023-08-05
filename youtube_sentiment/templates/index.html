@@ -14,7 +14,6 @@
                 {% csrf_token %}
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="inputPassword2" class="sr-only">Password</label>
-                    <!-- <input name="link" type="text" class="form-control" id="inputPassword2" placeholder="Link paste here"> -->
                     {{ form.link }}
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Find</button>
@@ -24,15 +23,21 @@
     <div class="col-4"></div>
 </div>
 <div class="row">
-    <div class="card">
-        <div class="card-body">
-            <p class="card-text">{{ data.author}}</p>
-            <h5 class="card-title">{{ data.title }}</h5>
-            <p class="card-text">
-                {{ data.length }}
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    {% if data.comments %}
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">{{ data.author}}</p>
+                <h5 class="card-title">{{ data.title }}</h5>
+                <p class="card-text">{{ data.length }} min durations</p>
+                <a href="#" class="btn btn-primary mb-3">Analysis</a>
+                <h5>Comments</h5>
+                <ul class="list-group list-group-flush">
+                    {% for comment in data.comments %}
+                        <li class="list-group-item">{{ comment }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>
 {% endblock %}
