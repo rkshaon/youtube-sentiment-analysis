@@ -1,1 +1,4 @@
 /env
+/youtube_sentiment/__pycache__
+/youtube/__pycache__
+/youtube/migrations
