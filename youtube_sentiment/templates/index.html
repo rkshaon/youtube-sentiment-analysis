@@ -2,7 +2,26 @@
 {% load static %}
 
 {% block content %}
+
 <div class="bg-dark text-center pt-3 pb-3">
     <h1 class="text-light">YouTube Sentiment Analysis</h1>
 </div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="mt-5">
+            <form method="post" class="form-inline" enctype="multipart/form-data" action="" role="form">
+                {% csrf_token %}
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <!-- <input name="link" type="text" class="form-control" id="inputPassword2" placeholder="Link paste here"> -->
+                    {{ form.link }}
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Find</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
 {% endblock %}
