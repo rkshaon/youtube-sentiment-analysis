@@ -23,13 +23,14 @@
     <div class="col-4"></div>
 </div>
 <div class="row">
+    {% if data.comments %}
         <div class="card">
             <div class="card-body">
                 <p class="card-text">{{ data.author}}</p>
                 <h5 class="card-title">{{ data.title }}</h5>
                 <p class="card-text">{{ data.length }} min durations</p>
                 <a href="#" class="btn btn-primary mb-3">Analysis</a>
-                <h5>Comments</h5>
+                <h5>Total {{data.comments_count}} Comments</h5>
                 <ul class="list-group list-group-flush">
                     {% for comment in data.comments %}
                         <li class="list-group-item">{{ comment }}</li>
@@ -37,5 +38,6 @@
                 </ul>
             </div>
         </div>
+    {% endif %}
 </div>
 {% endblock %}

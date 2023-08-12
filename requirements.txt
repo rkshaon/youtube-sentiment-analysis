@@ -1,3 +1,6 @@
 Django == 4.2.4
 pytube == 15.0.0
 google-api-python-client == 2.95.0
+langdetect == 1.0.9
+text2emotion == 0.0.5
+emoji == 2.7.0
