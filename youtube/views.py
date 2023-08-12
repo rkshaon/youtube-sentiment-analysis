@@ -48,13 +48,13 @@ def index(request):
                 else:
                     continute_iterate = False
 
-            # Again repeat
-            if 'nextPageToken' in video_response:
-                video_response = youtube.commentThreads().list(
-                    part = 'snippet,replies',
-                    videoId = video_id,
-                      pageToken = video_response['nextPageToken']
-                ).execute()
+            # # Again repeat
+            # if 'nextPageToken' in video_response:
+            #     video_response = youtube.commentThreads().list(
+            #         part = 'snippet,replies',
+            #         videoId = video_id,
+            #           pageToken = video_response['nextPageToken']
+            #     ).execute()
                 
         data['comments'] = comments
 

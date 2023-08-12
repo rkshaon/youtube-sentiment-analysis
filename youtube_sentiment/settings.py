@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'student_portal/static'),
+    os.path.join(BASE_DIR, 'youtube_sentiment/static'),
 ]
 
 # Default primary key field type
